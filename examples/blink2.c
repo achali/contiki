@@ -31,7 +31,6 @@ PROCESS_THREAD(blink_process, ev, data)
 	static uint8_t push = 0;	// Keeps the number of times the user pushes the button sensor
  
 	PROCESS_WAIT_EVENT_UNTIL((ev==sensors_event) && (data == &button_sensor));
- 
         if (push % 2 == 0) { 
 	  leds_toggle(LEDS_ALL);
 	  printf("[%d] TURNING OFF ALL LEDS ... [DONE]\n", push);
